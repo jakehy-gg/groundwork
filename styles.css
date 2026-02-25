@@ -866,6 +866,7 @@ section { padding: 96px 0; }
   gap: 20px;
   animation: ticker 32s linear infinite;
   width: max-content;
+  will-change: transform;
 }
 
 .results-ticker:hover { animation-play-state: paused; }
@@ -875,6 +876,14 @@ section { padding: 96px 0; }
   100% { transform: translateX(-33.33%); }
 }
 
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .results-ticker { animation: none; }
+  [data-animate] { transition: none; opacity: 1; transform: none; }
+  .btn, .problem-card, .process-step, .proof-card, .about-card,
+  .faq-question, .faq-answer { transition: none; }
+}
+
 /* Frosted glass cards for proof items */
 .proof-card {
   min-width: 280px;
@@ -882,12 +891,20 @@ section { padding: 96px 0; }
   border: 1px solid rgba(255,255,255,0.09);
   border-radius: var(--radius-lg);
   padding: 24px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   cursor: pointer;
   transition: transform var(--transition), border-color var(--transition), background var(--transition);
   position: relative;
   overflow: hidden;
+}
+
+/* Backdrop blur only on devices that handle it well */
+@supports (backdrop-filter: blur(10px)) {
+  @media (min-width: 641px) {
+    .proof-card {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  }
 }
 
 .proof-card:hover {
@@ -896,42 +913,11 @@ section { padding: 96px 0; }
   background: rgba(200,80,10,0.05);
 }
 
-.proof-placeholder {
-  width: 100%;
-  height: 160px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.04);
-  border: 1px dashed rgba(255,255,255,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-  flex-direction: column;
-  gap: 8px;
-  transition: background var(--transition);
-}
-
-.proof-card:hover .proof-placeholder {
-  background: rgba(200,80,10,0.06);
-}
-
-.proof-placeholder-icon {
-  font-size: 1.8rem;
-  opacity: 0.35;
-}
-
-.proof-placeholder-text {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.28);
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-align: center;
-}
-
 .proof-img {
   width: 100%;
   height: 160px;
   object-fit: cover;
+  object-position: center top;
   border-radius: 10px;
   margin-bottom: 16px;
   border: 1px solid rgba(255,255,255,0.12);
@@ -960,10 +946,6 @@ section { padding: 96px 0; }
   margin-top: 10px;
 }
 
-/* Duplicate cards for seamless loop */
-.results-ticker-inner {
-  display: contents;
-}
 
 /* ===================== FAQ ===================== */
 #faq {
@@ -1308,3 +1290,23 @@ footer p {
 /* ===================== UTILITY ===================== */
 .text-accent { color: var(--accent); }
 .nowrap { white-space: nowrap; }
+
+/* Skip to content — visible only on keyboard focus */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 200;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 0 0 8px 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
