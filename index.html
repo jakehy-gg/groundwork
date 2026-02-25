@@ -4,7 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Groundwork Digital helps local trades businesses dominate Google, build professional websites, and grow on social media. Local SEO, content creation, and web development for plumbers, electricians, builders and more.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#111110">
+  <meta name="author" content="Groundwork Digital">
   <title>Groundwork Digital — Local SEO & Content for Trades</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://groundworkdigital.co.uk/">
@@ -56,6 +64,9 @@
 </head>
 <body>
 
+  <!-- Skip to main content for accessibility -->
+  <a href="#problem" class="skip-link">Skip to content</a>
+
   <!-- ============================================================
        STICKY NAV
        Hidden until you scroll past the hero. Appears with a
@@ -81,7 +92,6 @@
        they already know but haven't acted on. We name it first.
   ============================================================ -->
   <section id="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
     <div class="noise-overlay" aria-hidden="true"></div>
 
     <div class="container">
@@ -408,7 +418,6 @@
 
     </div>
   </section>
-  </section>
 
   <!-- ============================================================
        ABOUT
@@ -426,7 +435,7 @@
       <div class="about-grid">
         <div class="about-card" data-animate data-delay="1">
           <div class="about-photo">
-            <img src="images/jakehughes.png" alt="Jake Hughes holding YouTube Gold Play Button" onerror="this.parentElement.querySelector('.about-photo-placeholder').style.display='flex'; this.style.display='none'">
+            <img src="images/jakehughes.png" alt="Jake Hughes holding YouTube Gold Play Button" loading="lazy" width="600" height="450" onerror="this.parentElement.querySelector('.about-photo-placeholder').style.display='flex'; this.style.display='none'">
             <div class="about-photo-placeholder" style="display:none">JH</div>
             <span class="about-photo-label">The Online Side</span>
           </div>
@@ -458,7 +467,7 @@
 
         <div class="about-card" data-animate data-delay="2">
           <div class="about-photo">
-            <img src="images/owenroberts.png" alt="Owen Roberts on the job in the trades" onerror="this.parentElement.querySelector('.about-photo-placeholder').style.display='flex'; this.style.display='none'">
+            <img src="images/owenroberts.png" alt="Owen Roberts on the job in the trades" loading="lazy" width="600" height="450" onerror="this.parentElement.querySelector('.about-photo-placeholder').style.display='flex'; this.style.display='none'">
             <div class="about-photo-placeholder" style="display:none">OR</div>
             <span class="about-photo-label">The Industry Side</span>
           </div>
@@ -512,96 +521,114 @@
       <div class="results-ticker" id="resultsTicker">
         <!-- Set 1 -->
         <div class="proof-card">
-          <img src="results/website.png" alt="Custom website design showcase" class="proof-img">
+          <img src="results/website.png" alt="Custom website design showcase" class="proof-img" loading="lazy">
           <div class="proof-card-title">Complex, conversion-focused websites</div>
           <div class="proof-card-sub">Professional design & development</div>
           <div class="proof-meta">💻 Web Design</div>
         </div>
         <div class="proof-card">
-          <img src="results/tiktok.jpg" alt="TikTok analytics showing 3k followers" class="proof-img">
+          <img src="results/tiktok.jpg" alt="TikTok analytics showing 3k followers" class="proof-img" loading="lazy">
           <div class="proof-card-title">3k followers in the first week</div>
           <div class="proof-card-sub">TikTok — organic, no ads</div>
           <div class="proof-meta">📱 TikTok Analytics</div>
         </div>
         <div class="proof-card">
-          <img src="results/organicproof.png" alt="Google Analytics showing 187k organic visitors" class="proof-img">
+          <img src="results/organicproof.png" alt="Google Analytics showing 187k organic visitors" class="proof-img" loading="lazy">
           <div class="proof-card-title">187k visitors from Google SEO</div>
           <div class="proof-card-sub">Organic search traffic growth</div>
           <div class="proof-meta">📊 Google Analytics</div>
         </div>
         <div class="proof-card">
-          <img src="results/tiktokviews.png" alt="TikTok dashboard showing 1.8M views" class="proof-img">
+          <img src="results/tiktokviews.png" alt="TikTok dashboard showing 1.8M views" class="proof-img" loading="lazy">
           <div class="proof-card-title">1.8M views across 90 days</div>
           <div class="proof-card-sub">TikTok dashboard — organic reach</div>
           <div class="proof-meta">📱 TikTok Analytics</div>
         </div>
         <div class="proof-card">
-          <img src="results/jewelers.jpg" alt="Video production for jeweler client" class="proof-img">
+          <img src="results/jewelers.jpg" alt="Video production for jeweler client" class="proof-img" loading="lazy">
           <div class="proof-card-title">Professional video production</div>
           <div class="proof-card-sub">On-location filming for trades & businesses</div>
           <div class="proof-meta">🎬 Content Creation</div>
+        </div>
+        <div class="proof-card">
+          <img src="results/googleanalytics.png" alt="Google Analytics showing 1.3M visitors from YouTube" class="proof-img" loading="lazy">
+          <div class="proof-card-title">1.3M website visitors from YouTube</div>
+          <div class="proof-card-sub">Sessions tracked in Google Analytics</div>
+          <div class="proof-meta">📊 Google Analytics</div>
         </div>
         <!-- Set 2 — identical for seamless loop -->
         <div class="proof-card">
-          <img src="results/website.png" alt="Custom website design showcase" class="proof-img">
+          <img src="results/website.png" alt="Custom website design showcase" class="proof-img" loading="lazy">
           <div class="proof-card-title">Complex, conversion-focused websites</div>
           <div class="proof-card-sub">Professional design & development</div>
           <div class="proof-meta">💻 Web Design</div>
         </div>
         <div class="proof-card">
-          <img src="results/tiktok.jpg" alt="TikTok analytics showing 3k followers" class="proof-img">
+          <img src="results/tiktok.jpg" alt="TikTok analytics showing 3k followers" class="proof-img" loading="lazy">
           <div class="proof-card-title">3k followers in the first week</div>
           <div class="proof-card-sub">TikTok — organic, no ads</div>
           <div class="proof-meta">📱 TikTok Analytics</div>
         </div>
         <div class="proof-card">
-          <img src="results/organicproof.png" alt="Google Analytics showing 187k organic visitors" class="proof-img">
+          <img src="results/organicproof.png" alt="Google Analytics showing 187k organic visitors" class="proof-img" loading="lazy">
           <div class="proof-card-title">187k visitors from Google SEO</div>
           <div class="proof-card-sub">Organic search traffic growth</div>
           <div class="proof-meta">📊 Google Analytics</div>
         </div>
         <div class="proof-card">
-          <img src="results/tiktokviews.png" alt="TikTok dashboard showing 1.8M views" class="proof-img">
+          <img src="results/tiktokviews.png" alt="TikTok dashboard showing 1.8M views" class="proof-img" loading="lazy">
           <div class="proof-card-title">1.8M views across 90 days</div>
           <div class="proof-card-sub">TikTok dashboard — organic reach</div>
           <div class="proof-meta">📱 TikTok Analytics</div>
         </div>
         <div class="proof-card">
-          <img src="results/jewelers.jpg" alt="Video production for jeweler client" class="proof-img">
+          <img src="results/jewelers.jpg" alt="Video production for jeweler client" class="proof-img" loading="lazy">
           <div class="proof-card-title">Professional video production</div>
           <div class="proof-card-sub">On-location filming for trades & businesses</div>
           <div class="proof-meta">🎬 Content Creation</div>
+        </div>
+        <div class="proof-card">
+          <img src="results/googleanalytics.png" alt="Google Analytics showing 1.3M visitors from YouTube" class="proof-img" loading="lazy">
+          <div class="proof-card-title">1.3M website visitors from YouTube</div>
+          <div class="proof-card-sub">Sessions tracked in Google Analytics</div>
+          <div class="proof-meta">📊 Google Analytics</div>
         </div>
         <!-- Set 3 — third copy for truly seamless loop -->
         <div class="proof-card">
-          <img src="results/website.png" alt="Custom website design showcase" class="proof-img">
+          <img src="results/website.png" alt="Custom website design showcase" class="proof-img" loading="lazy">
           <div class="proof-card-title">Complex, conversion-focused websites</div>
           <div class="proof-card-sub">Professional design & development</div>
           <div class="proof-meta">💻 Web Design</div>
         </div>
         <div class="proof-card">
-          <img src="results/tiktok.jpg" alt="TikTok analytics showing 3k followers" class="proof-img">
+          <img src="results/tiktok.jpg" alt="TikTok analytics showing 3k followers" class="proof-img" loading="lazy">
           <div class="proof-card-title">3k followers in the first week</div>
           <div class="proof-card-sub">TikTok — organic, no ads</div>
           <div class="proof-meta">📱 TikTok Analytics</div>
         </div>
         <div class="proof-card">
-          <img src="results/organicproof.png" alt="Google Analytics showing 187k organic visitors" class="proof-img">
+          <img src="results/organicproof.png" alt="Google Analytics showing 187k organic visitors" class="proof-img" loading="lazy">
           <div class="proof-card-title">187k visitors from Google SEO</div>
           <div class="proof-card-sub">Organic search traffic growth</div>
           <div class="proof-meta">📊 Google Analytics</div>
         </div>
         <div class="proof-card">
-          <img src="results/tiktokviews.png" alt="TikTok dashboard showing 1.8M views" class="proof-img">
+          <img src="results/tiktokviews.png" alt="TikTok dashboard showing 1.8M views" class="proof-img" loading="lazy">
           <div class="proof-card-title">1.8M views across 90 days</div>
           <div class="proof-card-sub">TikTok dashboard — organic reach</div>
           <div class="proof-meta">📱 TikTok Analytics</div>
         </div>
         <div class="proof-card">
-          <img src="results/jewelers.jpg" alt="Video production for jeweler client" class="proof-img">
+          <img src="results/jewelers.jpg" alt="Video production for jeweler client" class="proof-img" loading="lazy">
           <div class="proof-card-title">Professional video production</div>
           <div class="proof-card-sub">On-location filming for trades & businesses</div>
           <div class="proof-meta">🎬 Content Creation</div>
+        </div>
+        <div class="proof-card">
+          <img src="results/googleanalytics.png" alt="Google Analytics showing 1.3M visitors from YouTube" class="proof-img" loading="lazy">
+          <div class="proof-card-title">1.3M website visitors from YouTube</div>
+          <div class="proof-card-sub">Sessions tracked in Google Analytics</div>
+          <div class="proof-meta">📊 Google Analytics</div>
         </div>
       </div>
     </div>
