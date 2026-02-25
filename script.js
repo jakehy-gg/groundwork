@@ -96,66 +96,34 @@
   const questions = document.querySelectorAll('.faq-question');
   if (!questions.length) return;
 
+  function toggleFAQ(question) {
+    const item = question.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = question.classList.contains('open');
+
+    // Close all
+    questions.forEach(q => {
+      q.classList.remove('open');
+      q.setAttribute('aria-expanded', 'false');
+      q.parentElement.querySelector('.faq-answer').classList.remove('open');
+    });
+
+    // Toggle current
+    if (!isOpen) {
+      question.classList.add('open');
+      question.setAttribute('aria-expanded', 'true');
+      answer.classList.add('open');
+    }
+  }
+
   questions.forEach(question => {
-    question.addEventListener('click', () => {
-      const item = question.parentElement;
-      const answer = item.querySelector('.faq-answer');
-      const isOpen = question.classList.contains('open');
-
-      // Close all
-      questions.forEach(q => {
-        q.classList.remove('open');
-        q.parentElement.querySelector('.faq-answer').classList.remove('open');
-      });
-
-      // Toggle current
-      if (!isOpen) {
-        question.classList.add('open');
-        answer.classList.add('open');
+    question.addEventListener('click', () => toggleFAQ(question));
+    question.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleFAQ(question);
       }
     });
-  });
-})();
-
-// ==================== HERO PARALLAX ====================
-// Subtle mousemove effect in hero section
-(function initParallax() {
-  const hero = document.getElementById('hero');
-  if (!hero) return;
-
-  const layer = hero.querySelector('.hero-parallax-layer');
-  if (!layer) return;
-
-  let mouseX = 0, mouseY = 0;
-  let currentX = 0, currentY = 0;
-  let animationId = null;
-
-  function lerp(start, end, factor) {
-    return start + (end - start) * factor;
-  }
-
-  function animate() {
-    currentX = lerp(currentX, mouseX, 0.1);
-    currentY = lerp(currentY, mouseY, 0.1);
-    layer.style.transform = `translate(${currentX}px, ${currentY}px)`;
-    animationId = requestAnimationFrame(animate);
-  }
-
-  hero.addEventListener('mousemove', (e) => {
-    const rect = hero.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    mouseX = x * 20;
-    mouseY = y * 20;
-
-    if (!animationId) {
-      animate();
-    }
-  }, { passive: true });
-
-  hero.addEventListener('mouseleave', () => {
-    mouseX = 0;
-    mouseY = 0;
   });
 })();
 
