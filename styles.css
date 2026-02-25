@@ -243,6 +243,7 @@ section { padding: 96px 0; }
 /* ===================== HERO ===================== */
 #hero {
   position: relative;
+  min-height: 100vh; /* fallback for older browsers */
   min-height: 100svh;
   display: flex;
   align-items: center;
@@ -955,11 +956,6 @@ section { padding: 96px 0; }
   margin-top: 10px;
 }
 
-/* ticker-set is transparent to layout on desktop — cards sit directly in the flex */
-.ticker-set {
-  display: contents;
-}
-
 
 /* ===================== FAQ ===================== */
 #faq {
@@ -1165,28 +1161,6 @@ footer p {
     font-size: 0.88rem;
   }
   
-  /* Results ticker — swipeable on mobile */
-  .results-ticker-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    mask-image: none;
-    -webkit-mask-image: none;
-    scrollbar-width: none; /* Firefox */
-    padding-bottom: 4px;
-  }
-
-  .results-ticker-wrap::-webkit-scrollbar { display: none; }
-
-  .results-ticker {
-    animation: none !important;
-    padding: 0 18px;
-  }
-
-  .ticker-set-dupe { display: none; }
-
-  .proof-card { scroll-snap-align: start; }
-
   /* Pricing cards mobile adjustments */
   .pricing-card {
     padding: 28px 24px;
