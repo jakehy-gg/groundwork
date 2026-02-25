@@ -871,6 +871,11 @@ section { padding: 96px 0; }
 
 .results-ticker:hover { animation-play-state: paused; }
 
+/* Only pause on hover for devices with a real pointer (not touch screens) */
+@media (hover: none) {
+  .results-ticker:hover { animation-play-state: running; }
+}
+
 @keyframes ticker {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-33.33%); }
@@ -948,6 +953,11 @@ section { padding: 96px 0; }
   font-weight: 700;
   color: #F4A272;
   margin-top: 10px;
+}
+
+/* ticker-set is transparent to layout on desktop — cards sit directly in the flex */
+.ticker-set {
+  display: contents;
 }
 
 
@@ -1155,6 +1165,28 @@ footer p {
     font-size: 0.88rem;
   }
   
+  /* Results ticker — swipeable on mobile */
+  .results-ticker-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    mask-image: none;
+    -webkit-mask-image: none;
+    scrollbar-width: none; /* Firefox */
+    padding-bottom: 4px;
+  }
+
+  .results-ticker-wrap::-webkit-scrollbar { display: none; }
+
+  .results-ticker {
+    animation: none !important;
+    padding: 0 18px;
+  }
+
+  .ticker-set-dupe { display: none; }
+
+  .proof-card { scroll-snap-align: start; }
+
   /* Pricing cards mobile adjustments */
   .pricing-card {
     padding: 28px 24px;
