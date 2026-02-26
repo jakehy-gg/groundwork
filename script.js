@@ -28,7 +28,8 @@ function animateCounter(element) {
     var duration = 1600;
     var startTime = null;
 
-    function step(timestamp) {
+    // var expression avoids strict-mode block-scoped function declaration behaviour
+    var step = function(timestamp) {
       if (!startTime) startTime = timestamp;
       var elapsed = timestamp - startTime;
       var progress = Math.min(elapsed / duration, 1);
@@ -39,7 +40,7 @@ function animateCounter(element) {
       } else {
         element.textContent = target.toLocaleString();
       }
-    }
+    };
 
     requestAnimationFrame(step);
   } catch(e) {}
